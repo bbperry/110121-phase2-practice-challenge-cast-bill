@@ -1,15 +1,12 @@
 import React from 'react';
 
-const BillCard = ({ bill, handleAddCast, handleFire }) => {
-
-  
-
+const NewBillCard = ({ bill, handleUnCast, handleFire }) => {
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bill.id}
-        onClick={() => {handleAddCast(bill)}}
+        onClick={() => {handleUnCast(bill)}}
       >
         <div className="image">
           <img alt={bill.name} src={bill.photo} />
@@ -38,7 +35,7 @@ const BillCard = ({ bill, handleAddCast, handleFire }) => {
               <button
                 className="ui mini blue button"
                 onClick={(e) => {e.stopPropagation() 
-                  handleFire(bill.id)} }
+                    handleFire(bill.id)} }
               >
                 FIRE
               </button>
@@ -50,4 +47,4 @@ const BillCard = ({ bill, handleAddCast, handleFire }) => {
   );
 };
 
-export default BillCard;
+export default NewBillCard;
